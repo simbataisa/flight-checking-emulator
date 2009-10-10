@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlanner", "TravelPlanner.csproj", "{F1224A89-E912-4915-BA87-71D4DB0FED2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "flight-checking-emulator", "flight-checking-emulator.csproj", "{F1224A89-E912-4915-BA87-71D4DB0FED2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
