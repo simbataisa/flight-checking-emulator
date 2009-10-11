@@ -1,7 +1,7 @@
 
 using System;
 
-namespace TravelPlanner
+namespace FlightCheckingEmulator
 {
 	/// <summary>
 	/// Description of TimeSlot.

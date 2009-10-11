@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 using System.Data;
 
-namespace TravelPlanner
+namespace FlightCheckingEmulator
 {
 	/// <summary>
 	/// Description of TravelPlanner.

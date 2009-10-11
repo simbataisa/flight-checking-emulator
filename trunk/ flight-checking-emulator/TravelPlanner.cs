@@ -7,7 +7,7 @@ using System.IO;
 using System.Windows.Forms;
 using MZCOMLib;
 
-namespace TravelPlanner
+namespace FlightCheckingEmulator
 {
 	public class TravelPlanner
 	{

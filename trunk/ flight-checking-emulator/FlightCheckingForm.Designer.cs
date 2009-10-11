@@ -1,4 +1,4 @@
-﻿namespace TravelPlanner
+﻿namespace FlightCheckingEmulator
 {
     partial class FlightCheckingForm
     {
@@ -34,23 +34,23 @@
             this.prologBtn = new System.Windows.Forms.Button();
             this.checkBtn = new System.Windows.Forms.Button();
             this.directFlightOption = new System.Windows.Forms.CheckBox();
-            this.weekDaysCLB = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxDays = new System.Windows.Forms.CheckedListBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.chkFlightComboBoxDepart = new System.Windows.Forms.ComboBox();
+            this.chkFlightComboBoxTo = new System.Windows.Forms.ComboBox();
+            this.chkFlightComboBoxFrom = new System.Windows.Forms.ComboBox();
+            this.chkFlighLabelDepart = new System.Windows.Forms.Label();
+            this.chkFlighLabelTo = new System.Windows.Forms.Label();
+            this.chkFlighLabelFrom = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.comboBoxVisitPlanReturnOn = new System.Windows.Forms.ComboBox();
+            this.comboBoxVisitPlanStartOn = new System.Windows.Forms.ComboBox();
+            this.visitPlanLabelReturn = new System.Windows.Forms.Label();
+            this.visitPlanLabelStart = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.visitPlanChkListBoxPlaces = new System.Windows.Forms.CheckedListBox();
+            this.visitPlanComboBoxOrigin = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -91,14 +91,14 @@
             this.tabPage1.Controls.Add(this.prologBtn);
             this.tabPage1.Controls.Add(this.checkBtn);
             this.tabPage1.Controls.Add(this.directFlightOption);
-            this.tabPage1.Controls.Add(this.weekDaysCLB);
+            this.tabPage1.Controls.Add(this.checkedListBoxDays);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.comboBox3);
-            this.tabPage1.Controls.Add(this.comboBox2);
-            this.tabPage1.Controls.Add(this.comboBox1);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.chkFlightComboBoxDepart);
+            this.tabPage1.Controls.Add(this.chkFlightComboBoxTo);
+            this.tabPage1.Controls.Add(this.chkFlightComboBoxFrom);
+            this.tabPage1.Controls.Add(this.chkFlighLabelDepart);
+            this.tabPage1.Controls.Add(this.chkFlighLabelTo);
+            this.tabPage1.Controls.Add(this.chkFlighLabelFrom);
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -138,21 +138,13 @@
             this.directFlightOption.Text = "Direct Flight Only";
             this.directFlightOption.UseVisualStyleBackColor = true;
             // 
-            // weekDaysCLB
+            // checkedListBoxDays
             // 
-            this.weekDaysCLB.FormattingEnabled = true;
-            this.weekDaysCLB.Items.AddRange(new object[] {
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wenesday",
-            "Thursday",
-            "Friday",
-            "Saturday"});
-            this.weekDaysCLB.Location = new System.Drawing.Point(340, 0);
-            this.weekDaysCLB.Name = "weekDaysCLB";
-            this.weekDaysCLB.Size = new System.Drawing.Size(120, 79);
-            this.weekDaysCLB.TabIndex = 21;
+            this.checkedListBoxDays.FormattingEnabled = true;
+            this.checkedListBoxDays.Location = new System.Drawing.Point(340, 0);
+            this.checkedListBoxDays.Name = "checkedListBoxDays";
+            this.checkedListBoxDays.Size = new System.Drawing.Size(120, 79);
+            this.checkedListBoxDays.TabIndex = 21;
             // 
             // label4
             // 
@@ -164,77 +156,76 @@
             this.label4.TabIndex = 20;
             this.label4.Text = "Weekdays";
             // 
-            // comboBox3
+            // chkFlightComboBoxDepart
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(97, 59);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 22);
-            this.comboBox3.TabIndex = 19;
+            this.chkFlightComboBoxDepart.FormattingEnabled = true;
+            this.chkFlightComboBoxDepart.Location = new System.Drawing.Point(97, 59);
+            this.chkFlightComboBoxDepart.Name = "chkFlightComboBoxDepart";
+            this.chkFlightComboBoxDepart.Size = new System.Drawing.Size(121, 22);
+            this.chkFlightComboBoxDepart.TabIndex = 19;
             // 
-            // comboBox2
+            // chkFlightComboBoxTo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(97, 31);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 22);
-            this.comboBox2.TabIndex = 18;
+            this.chkFlightComboBoxTo.FormattingEnabled = true;
+            this.chkFlightComboBoxTo.Location = new System.Drawing.Point(97, 31);
+            this.chkFlightComboBoxTo.Name = "chkFlightComboBoxTo";
+            this.chkFlightComboBoxTo.Size = new System.Drawing.Size(121, 22);
+            this.chkFlightComboBoxTo.TabIndex = 18;
             // 
-            // comboBox1
+            // chkFlightComboBoxFrom
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(97, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 22);
-            this.comboBox1.TabIndex = 17;
+            this.chkFlightComboBoxFrom.FormattingEnabled = true;
+            this.chkFlightComboBoxFrom.Location = new System.Drawing.Point(97, 3);
+            this.chkFlightComboBoxFrom.Name = "chkFlightComboBoxFrom";
+            this.chkFlightComboBoxFrom.Size = new System.Drawing.Size(121, 22);
+            this.chkFlightComboBoxFrom.TabIndex = 17;
             // 
-            // label3
+            // chkFlighLabelDepart
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 59);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 14);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Depart Time";
+            this.chkFlighLabelDepart.AutoSize = true;
+            this.chkFlighLabelDepart.Location = new System.Drawing.Point(6, 59);
+            this.chkFlighLabelDepart.Name = "chkFlighLabelDepart";
+            this.chkFlighLabelDepart.Size = new System.Drawing.Size(64, 14);
+            this.chkFlighLabelDepart.TabIndex = 16;
+            this.chkFlighLabelDepart.Text = "Depart Time";
             // 
-            // label2
+            // chkFlighLabelTo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(19, 14);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "To";
+            this.chkFlighLabelTo.AutoSize = true;
+            this.chkFlighLabelTo.Location = new System.Drawing.Point(6, 31);
+            this.chkFlighLabelTo.Name = "chkFlighLabelTo";
+            this.chkFlighLabelTo.Size = new System.Drawing.Size(19, 14);
+            this.chkFlighLabelTo.TabIndex = 15;
+            this.chkFlighLabelTo.Text = "To";
             // 
-            // label1
+            // chkFlighLabelFrom
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 16);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "From";
+            this.chkFlighLabelFrom.AutoSize = true;
+            this.chkFlighLabelFrom.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkFlighLabelFrom.Location = new System.Drawing.Point(6, 3);
+            this.chkFlighLabelFrom.Name = "chkFlighLabelFrom";
+            this.chkFlighLabelFrom.Size = new System.Drawing.Size(38, 16);
+            this.chkFlighLabelFrom.TabIndex = 14;
+            this.chkFlighLabelFrom.Text = "From";
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.comboBox6);
-            this.tabPage2.Controls.Add(this.comboBox5);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.comboBoxVisitPlanReturnOn);
+            this.tabPage2.Controls.Add(this.comboBoxVisitPlanStartOn);
+            this.tabPage2.Controls.Add(this.visitPlanLabelReturn);
+            this.tabPage2.Controls.Add(this.visitPlanLabelStart);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.checkedListBox1);
-            this.tabPage2.Controls.Add(this.comboBox4);
+            this.tabPage2.Controls.Add(this.visitPlanChkListBoxPlaces);
+            this.tabPage2.Controls.Add(this.visitPlanComboBoxOrigin);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(775, 84);
+            this.tabPage2.Size = new System.Drawing.Size(778, 84);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Visit Plan";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // button1
             // 
@@ -246,41 +237,41 @@
             this.button1.Text = "Start Plan";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // comboBox6
+            // comboBoxVisitPlanReturnOn
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(511, 34);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 22);
-            this.comboBox6.TabIndex = 27;
+            this.comboBoxVisitPlanReturnOn.FormattingEnabled = true;
+            this.comboBoxVisitPlanReturnOn.Location = new System.Drawing.Point(511, 34);
+            this.comboBoxVisitPlanReturnOn.Name = "comboBoxVisitPlanReturnOn";
+            this.comboBoxVisitPlanReturnOn.Size = new System.Drawing.Size(121, 22);
+            this.comboBoxVisitPlanReturnOn.TabIndex = 27;
             // 
-            // comboBox5
+            // comboBoxVisitPlanStartOn
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(511, 4);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 22);
-            this.comboBox5.TabIndex = 26;
+            this.comboBoxVisitPlanStartOn.FormattingEnabled = true;
+            this.comboBoxVisitPlanStartOn.Location = new System.Drawing.Point(511, 4);
+            this.comboBoxVisitPlanStartOn.Name = "comboBoxVisitPlanStartOn";
+            this.comboBoxVisitPlanStartOn.Size = new System.Drawing.Size(121, 22);
+            this.comboBoxVisitPlanStartOn.TabIndex = 26;
             // 
-            // label8
+            // visitPlanLabelReturn
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(436, 34);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 16);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Return on";
+            this.visitPlanLabelReturn.AutoSize = true;
+            this.visitPlanLabelReturn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visitPlanLabelReturn.Location = new System.Drawing.Point(436, 34);
+            this.visitPlanLabelReturn.Name = "visitPlanLabelReturn";
+            this.visitPlanLabelReturn.Size = new System.Drawing.Size(64, 16);
+            this.visitPlanLabelReturn.TabIndex = 25;
+            this.visitPlanLabelReturn.Text = "Return on";
             // 
-            // label7
+            // visitPlanLabelStart
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(436, 3);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 16);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Start on";
+            this.visitPlanLabelStart.AutoSize = true;
+            this.visitPlanLabelStart.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visitPlanLabelStart.Location = new System.Drawing.Point(436, 3);
+            this.visitPlanLabelStart.Name = "visitPlanLabelStart";
+            this.visitPlanLabelStart.Size = new System.Drawing.Size(54, 16);
+            this.visitPlanLabelStart.TabIndex = 24;
+            this.visitPlanLabelStart.Text = "Start on";
             // 
             // label6
             // 
@@ -292,35 +283,28 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Places";
             // 
-            // checkedListBox1
+            // visitPlanChkListBoxPlaces
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.visitPlanChkListBoxPlaces.FormattingEnabled = true;
+            this.visitPlanChkListBoxPlaces.Location = new System.Drawing.Point(287, 3);
+            this.visitPlanChkListBoxPlaces.Name = "visitPlanChkListBoxPlaces";
+            this.visitPlanChkListBoxPlaces.Size = new System.Drawing.Size(120, 79);
+            this.visitPlanChkListBoxPlaces.TabIndex = 22;
+            // 
+            // visitPlanComboBoxOrigin
+            // 
+            this.visitPlanComboBoxOrigin.FormattingEnabled = true;
+            this.visitPlanComboBoxOrigin.Items.AddRange(new object[] {
             "Singapore",
             "London",
             "Edinburgh",
             "Greece",
             "Paris",
             "Rome"});
-            this.checkedListBox1.Location = new System.Drawing.Point(287, 3);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 79);
-            this.checkedListBox1.TabIndex = 22;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Singapore",
-            "London",
-            "Edinburgh",
-            "Greece",
-            "Paris",
-            "Rome"});
-            this.comboBox4.Location = new System.Drawing.Point(60, 3);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 22);
-            this.comboBox4.TabIndex = 18;
+            this.visitPlanComboBoxOrigin.Location = new System.Drawing.Point(60, 3);
+            this.visitPlanComboBoxOrigin.Name = "visitPlanComboBoxOrigin";
+            this.visitPlanComboBoxOrigin.Size = new System.Drawing.Size(121, 22);
+            this.visitPlanComboBoxOrigin.TabIndex = 18;
             // 
             // label5
             // 
@@ -337,7 +321,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 23);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(775, 84);
+            this.tabPage3.Size = new System.Drawing.Size(778, 84);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Shortest Flight Route";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -368,25 +352,25 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.CheckedListBox weekDaysCLB;
+        private System.Windows.Forms.CheckedListBox checkedListBoxDays;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox chkFlightComboBoxDepart;
+        private System.Windows.Forms.ComboBox chkFlightComboBoxTo;
+        private System.Windows.Forms.ComboBox chkFlightComboBoxFrom;
+        private System.Windows.Forms.Label chkFlighLabelDepart;
+        private System.Windows.Forms.Label chkFlighLabelTo;
+        private System.Windows.Forms.Label chkFlighLabelFrom;
         private System.Windows.Forms.CheckBox directFlightOption;
         private System.Windows.Forms.Button prologBtn;
         private System.Windows.Forms.Button checkBtn;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox visitPlanComboBoxOrigin;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckedListBox visitPlanChkListBoxPlaces;
+        private System.Windows.Forms.Label visitPlanLabelStart;
+        private System.Windows.Forms.Label visitPlanLabelReturn;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox comboBoxVisitPlanReturnOn;
+        private System.Windows.Forms.ComboBox comboBoxVisitPlanStartOn;
     }
 }

@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 
-namespace TravelPlanner
+namespace FlightCheckingEmulator
 {
 	/// <summary>
 	/// Description of Flight.

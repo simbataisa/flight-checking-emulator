@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace TravelPlanner
+namespace FlightCheckingEmulator
 {
 	/// <summary>
 	/// Class with program entry point.

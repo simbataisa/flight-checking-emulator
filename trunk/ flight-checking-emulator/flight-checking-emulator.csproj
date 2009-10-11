@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TravelPlanner</RootNamespace>
+    <RootNamespace>FlightCheckingEmulator</RootNamespace>
     <AssemblyName>TravelPlanner</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
