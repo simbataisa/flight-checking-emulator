@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace TravelPlanner
+namespace FlightCheckingEmulator
 {
 	/// <summary>
 	/// Description of Graph.
