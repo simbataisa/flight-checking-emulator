@@ -14,7 +14,7 @@ namespace FlightCheckingEmulator
 	/// </summary>
 	public partial class MainForm : Form
 	{
-		TravelPlanner tp;
+		FlightPlanner tp;
 		MyDataGrid[] dataGrids;
 
 		enum ErrorType { NoFlights };
@@ -31,7 +31,7 @@ namespace FlightCheckingEmulator
 			//
 			
 			try {
-				tp = new TravelPlanner();
+				tp = new FlightPlanner();
 				InitializeControls();
 			}
 			catch(System.IO.FileNotFoundException e) {
