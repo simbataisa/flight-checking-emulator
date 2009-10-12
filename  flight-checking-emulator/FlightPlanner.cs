@@ -9,7 +9,7 @@ using MZCOMLib;
 
 namespace FlightCheckingEmulator
 {
-	public class TravelPlanner
+	public class FlightPlanner
 	{
 		/* Basic Facts:
          * - Dictionary -
@@ -32,7 +32,7 @@ namespace FlightCheckingEmulator
 			get { return flights; }
 		}
 		
-		public TravelPlanner()
+		public FlightPlanner()
 		{
 			try {
 				//Read database from flights.txt and store as list of flight objects, indexed by unique flight no
