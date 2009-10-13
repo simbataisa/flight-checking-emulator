@@ -79,7 +79,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.resultPanel);
-            this.splitContainer1.Size = new System.Drawing.Size(784, 404);
+            this.splitContainer1.Size = new System.Drawing.Size(724, 404);
             this.splitContainer1.SplitterDistance = 112;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -92,7 +92,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(784, 111);
+            this.tabControl1.Size = new System.Drawing.Size(724, 111);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -113,7 +113,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(776, 84);
+            this.tabPage1.Size = new System.Drawing.Size(716, 84);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Check Flight";
             // 
@@ -121,7 +121,7 @@
             // 
             this.sortByDuration.AutoSize = true;
             this.sortByDuration.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sortByDuration.Location = new System.Drawing.Point(608, 9);
+            this.sortByDuration.Location = new System.Drawing.Point(591, 3);
             this.sortByDuration.Name = "sortByDuration";
             this.sortByDuration.Size = new System.Drawing.Size(123, 20);
             this.sortByDuration.TabIndex = 26;
@@ -131,7 +131,7 @@
             // prologBtn
             // 
             this.prologBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prologBtn.Location = new System.Drawing.Point(608, 35);
+            this.prologBtn.Location = new System.Drawing.Point(591, 29);
             this.prologBtn.Name = "prologBtn";
             this.prologBtn.Size = new System.Drawing.Size(97, 28);
             this.prologBtn.TabIndex = 25;
@@ -141,7 +141,7 @@
             // checkFlightBtn
             // 
             this.checkFlightBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkFlightBtn.Location = new System.Drawing.Point(476, 35);
+            this.checkFlightBtn.Location = new System.Drawing.Point(459, 29);
             this.checkFlightBtn.Name = "checkFlightBtn";
             this.checkFlightBtn.Size = new System.Drawing.Size(97, 28);
             this.checkFlightBtn.TabIndex = 24;
@@ -153,7 +153,7 @@
             // 
             this.directFlightOption.AutoSize = true;
             this.directFlightOption.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.directFlightOption.Location = new System.Drawing.Point(476, 9);
+            this.directFlightOption.Location = new System.Drawing.Point(459, 3);
             this.directFlightOption.Name = "directFlightOption";
             this.directFlightOption.Size = new System.Drawing.Size(128, 20);
             this.directFlightOption.TabIndex = 23;
@@ -172,7 +172,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(238, 9);
+            this.label4.Location = new System.Drawing.Point(238, 3);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 16);
             this.label4.TabIndex = 20;
@@ -246,14 +246,14 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(776, 84);
+            this.tabPage2.Size = new System.Drawing.Size(716, 84);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Visit Plan";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(655, 6);
+            this.button1.Location = new System.Drawing.Point(606, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 30);
             this.button1.TabIndex = 28;
@@ -263,7 +263,7 @@
             // comboBoxVisitPlanReturnOn
             // 
             this.comboBoxVisitPlanReturnOn.FormattingEnabled = true;
-            this.comboBoxVisitPlanReturnOn.Location = new System.Drawing.Point(511, 34);
+            this.comboBoxVisitPlanReturnOn.Location = new System.Drawing.Point(462, 34);
             this.comboBoxVisitPlanReturnOn.Name = "comboBoxVisitPlanReturnOn";
             this.comboBoxVisitPlanReturnOn.Size = new System.Drawing.Size(121, 22);
             this.comboBoxVisitPlanReturnOn.TabIndex = 27;
@@ -271,7 +271,7 @@
             // comboBoxVisitPlanStartOn
             // 
             this.comboBoxVisitPlanStartOn.FormattingEnabled = true;
-            this.comboBoxVisitPlanStartOn.Location = new System.Drawing.Point(511, 4);
+            this.comboBoxVisitPlanStartOn.Location = new System.Drawing.Point(462, 4);
             this.comboBoxVisitPlanStartOn.Name = "comboBoxVisitPlanStartOn";
             this.comboBoxVisitPlanStartOn.Size = new System.Drawing.Size(121, 22);
             this.comboBoxVisitPlanStartOn.TabIndex = 26;
@@ -280,7 +280,7 @@
             // 
             this.visitPlanLabelReturn.AutoSize = true;
             this.visitPlanLabelReturn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.visitPlanLabelReturn.Location = new System.Drawing.Point(436, 34);
+            this.visitPlanLabelReturn.Location = new System.Drawing.Point(387, 34);
             this.visitPlanLabelReturn.Name = "visitPlanLabelReturn";
             this.visitPlanLabelReturn.Size = new System.Drawing.Size(64, 16);
             this.visitPlanLabelReturn.TabIndex = 25;
@@ -290,7 +290,7 @@
             // 
             this.visitPlanLabelStart.AutoSize = true;
             this.visitPlanLabelStart.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.visitPlanLabelStart.Location = new System.Drawing.Point(436, 3);
+            this.visitPlanLabelStart.Location = new System.Drawing.Point(387, 3);
             this.visitPlanLabelStart.Name = "visitPlanLabelStart";
             this.visitPlanLabelStart.Size = new System.Drawing.Size(54, 16);
             this.visitPlanLabelStart.TabIndex = 24;
@@ -300,7 +300,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(211, 4);
+            this.label6.Location = new System.Drawing.Point(193, 4);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 16);
             this.label6.TabIndex = 23;
@@ -309,7 +309,7 @@
             // visitPlanChkListBoxPlaces
             // 
             this.visitPlanChkListBoxPlaces.FormattingEnabled = true;
-            this.visitPlanChkListBoxPlaces.Location = new System.Drawing.Point(287, 3);
+            this.visitPlanChkListBoxPlaces.Location = new System.Drawing.Point(253, 3);
             this.visitPlanChkListBoxPlaces.Name = "visitPlanChkListBoxPlaces";
             this.visitPlanChkListBoxPlaces.Size = new System.Drawing.Size(120, 79);
             this.visitPlanChkListBoxPlaces.TabIndex = 22;
@@ -324,7 +324,7 @@
             "Greece",
             "Paris",
             "Rome"});
-            this.visitPlanComboBoxOrigin.Location = new System.Drawing.Point(60, 3);
+            this.visitPlanComboBoxOrigin.Location = new System.Drawing.Point(53, 3);
             this.visitPlanComboBoxOrigin.Name = "visitPlanComboBoxOrigin";
             this.visitPlanComboBoxOrigin.Size = new System.Drawing.Size(121, 22);
             this.visitPlanComboBoxOrigin.TabIndex = 18;
@@ -344,7 +344,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 23);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(776, 84);
+            this.tabPage3.Size = new System.Drawing.Size(738, 84);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Shortest Flight Route";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -356,14 +356,14 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.resultPanel.Location = new System.Drawing.Point(0, 3);
             this.resultPanel.Name = "resultPanel";
-            this.resultPanel.Size = new System.Drawing.Size(781, 282);
+            this.resultPanel.Size = new System.Drawing.Size(721, 282);
             this.resultPanel.TabIndex = 0;
             // 
             // FlightCheckingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 404);
+            this.ClientSize = new System.Drawing.Size(724, 404);
             this.Controls.Add(this.splitContainer1);
             this.Name = "FlightCheckingForm";
             this.Text = "Flight Checking Emulator";
