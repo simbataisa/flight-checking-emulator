@@ -136,7 +136,7 @@ namespace FlightCheckingEmulator
 			}
 			
 			FlightConstraint con = GetCheckFlightConstraint();
-			List<List<String>> results = tp.CheckFlights(con);
+			List<List<String>> results = tp.CheckFlights(con, 1);
 			
 			tableLayoutPanelRight.Controls.Clear();
 			
@@ -307,7 +307,7 @@ namespace FlightCheckingEmulator
 			#endregion
 			
 			FlightConstraint con = GetVisitPlanConstraint();
-			List<List<String>> results = tp.CheckFlights(con);
+			List<List<String>> results = tp.CheckFlights(con, 1);
 			
 			this.tableLayoutPanelRight.Controls.Clear();
 			if( results.Count == 0 )

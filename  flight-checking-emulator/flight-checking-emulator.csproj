@@ -74,4 +74,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="flights.txt" />
+  </ItemGroup>
 </Project>

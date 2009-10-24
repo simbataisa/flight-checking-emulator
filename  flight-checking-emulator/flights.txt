@@ -6,6 +6,7 @@ London	   	Edinburgh 	18:40  	19:50	BA4822	Mo, Tu, We, Th, Fr
 Edinburgh	London		8:30	9:40	BA4733	Alldays
 Edinburgh	London		13:40 	14:50	BA4736	Alldays
 Edinburgh	London		19:40	20:50	BA4833	Mo, Tu, We, Th, Fr, Su
+Edinburgh	Paris		19:40	20:50	BA4834	Mo, Tu, We, Th, Fr, Su
 London		Greece		9:10	12:45	BA614	Alldays
 London		Greece		14:45	18:20 	SR805	Alldays
 Greece 		London 		9:00 	11:40	BA613	Mo, Tu, We, Th, Fr, Sa 
@@ -16,5 +17,5 @@ Paris 		London		9:10 	10:20 	BA511 	Alldays
 Paris 		London		12:20 	13:30	AZ460 	Alldays 
 Paris  		Rome  		11:30  	12:40 	JP322  	Tu, We, Th 
 Rome  		Paris  		13:30  	14:40  	JP323  	Tu, We, Th
-Rome  		Greece  	14:40  	16:30  	FS619  	Mo, We, Th, Fr 
+Rome  		Greece  	14:40  	16:31  	FS619  	Mo, We, Th, Fr 
 Greece  	Rome  		11:00  	13:10  	FS620  	Mo, We, Th, Fr 

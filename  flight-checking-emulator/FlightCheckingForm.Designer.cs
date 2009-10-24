@@ -31,7 +31,9 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.sortDurationOpt = new System.Windows.Forms.CheckBox();
+            this.sortTotalDuration = new System.Windows.Forms.RadioButton();
+            this.sortTimeInPlane = new System.Windows.Forms.RadioButton();
+            this.sortNoOfChange = new System.Windows.Forms.RadioButton();
             this.prologBtn = new System.Windows.Forms.Button();
             this.checkFlightBtn = new System.Windows.Forms.Button();
             this.directFlightOpt = new System.Windows.Forms.CheckBox();
@@ -79,7 +81,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.resultPanel);
-            this.splitContainer1.Size = new System.Drawing.Size(724, 375);
+            this.splitContainer1.Size = new System.Drawing.Size(795, 398);
             this.splitContainer1.SplitterDistance = 112;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -92,13 +94,15 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(724, 103);
+            this.tabControl1.Size = new System.Drawing.Size(795, 103);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Yellow;
-            this.tabPage1.Controls.Add(this.sortDurationOpt);
+            this.tabPage1.Controls.Add(this.sortTotalDuration);
+            this.tabPage1.Controls.Add(this.sortTimeInPlane);
+            this.tabPage1.Controls.Add(this.sortNoOfChange);
             this.tabPage1.Controls.Add(this.prologBtn);
             this.tabPage1.Controls.Add(this.checkFlightBtn);
             this.tabPage1.Controls.Add(this.directFlightOpt);
@@ -113,25 +117,52 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(716, 77);
+            this.tabPage1.Size = new System.Drawing.Size(787, 77);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Check Flight";
             // 
-            // sortDurationOpt
+            // sortTotalDuration
             // 
-            this.sortDurationOpt.AutoSize = true;
-            this.sortDurationOpt.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sortDurationOpt.Location = new System.Drawing.Point(591, 3);
-            this.sortDurationOpt.Name = "sortDurationOpt";
-            this.sortDurationOpt.Size = new System.Drawing.Size(123, 20);
-            this.sortDurationOpt.TabIndex = 26;
-            this.sortDurationOpt.Text = "Sort By Duration";
-            this.sortDurationOpt.UseVisualStyleBackColor = true;
+            this.sortTotalDuration.AutoSize = true;
+            this.sortTotalDuration.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.sortTotalDuration.Location = new System.Drawing.Point(598, 3);
+            this.sortTotalDuration.Name = "sortTotalDuration";
+            this.sortTotalDuration.Size = new System.Drawing.Size(153, 20);
+            this.sortTotalDuration.TabIndex = 29;
+            this.sortTotalDuration.TabStop = true;
+            this.sortTotalDuration.Text = "Sort By Total Duration";
+            this.sortTotalDuration.UseVisualStyleBackColor = true;
+            this.sortTotalDuration.CheckedChanged += new System.EventHandler(this.sortTotalDuration_CheckedChanged);
+            // 
+            // sortTimeInPlane
+            // 
+            this.sortTimeInPlane.AutoSize = true;
+            this.sortTimeInPlane.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.sortTimeInPlane.Location = new System.Drawing.Point(598, 54);
+            this.sortTimeInPlane.Name = "sortTimeInPlane";
+            this.sortTimeInPlane.Size = new System.Drawing.Size(153, 20);
+            this.sortTimeInPlane.TabIndex = 28;
+            this.sortTimeInPlane.TabStop = true;
+            this.sortTimeInPlane.Text = "Sort By Time in Plane";
+            this.sortTimeInPlane.UseVisualStyleBackColor = true;
+            // 
+            // sortNoOfChange
+            // 
+            this.sortNoOfChange.AutoSize = true;
+            this.sortNoOfChange.Checked = true;
+            this.sortNoOfChange.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.sortNoOfChange.Location = new System.Drawing.Point(598, 29);
+            this.sortNoOfChange.Name = "sortNoOfChange";
+            this.sortNoOfChange.Size = new System.Drawing.Size(188, 20);
+            this.sortNoOfChange.TabIndex = 27;
+            this.sortNoOfChange.TabStop = true;
+            this.sortNoOfChange.Text = "Sort By Number of Changes";
+            this.sortNoOfChange.UseVisualStyleBackColor = true;
             // 
             // prologBtn
             // 
             this.prologBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prologBtn.Location = new System.Drawing.Point(591, 27);
+            this.prologBtn.Location = new System.Drawing.Point(460, 50);
             this.prologBtn.Name = "prologBtn";
             this.prologBtn.Size = new System.Drawing.Size(97, 26);
             this.prologBtn.TabIndex = 25;
@@ -142,7 +173,7 @@
             // checkFlightBtn
             // 
             this.checkFlightBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkFlightBtn.Location = new System.Drawing.Point(459, 27);
+            this.checkFlightBtn.Location = new System.Drawing.Point(460, 22);
             this.checkFlightBtn.Name = "checkFlightBtn";
             this.checkFlightBtn.Size = new System.Drawing.Size(97, 26);
             this.checkFlightBtn.TabIndex = 24;
@@ -154,7 +185,7 @@
             // 
             this.directFlightOpt.AutoSize = true;
             this.directFlightOpt.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.directFlightOpt.Location = new System.Drawing.Point(459, 3);
+            this.directFlightOpt.Location = new System.Drawing.Point(447, 3);
             this.directFlightOpt.Name = "directFlightOpt";
             this.directFlightOpt.Size = new System.Drawing.Size(128, 20);
             this.directFlightOpt.TabIndex = 23;
@@ -247,7 +278,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(716, 77);
+            this.tabPage2.Size = new System.Drawing.Size(787, 77);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Visit Plan";
             // 
@@ -347,7 +378,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(716, 77);
+            this.tabPage3.Size = new System.Drawing.Size(787, 77);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Shortest Flight Route";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -359,14 +390,14 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.resultPanel.Location = new System.Drawing.Point(0, 3);
             this.resultPanel.Name = "resultPanel";
-            this.resultPanel.Size = new System.Drawing.Size(721, 254);
+            this.resultPanel.Size = new System.Drawing.Size(792, 277);
             this.resultPanel.TabIndex = 0;
             // 
             // FlightCheckingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 375);
+            this.ClientSize = new System.Drawing.Size(795, 398);
             this.Controls.Add(this.splitContainer1);
             this.Name = "FlightCheckingForm";
             this.Text = "Flight Checking Emulator";
@@ -410,6 +441,8 @@
         private System.Windows.Forms.ComboBox visitPlanReturnCmb;
         private System.Windows.Forms.ComboBox visitPlanStartCmb;
         private System.Windows.Forms.FlowLayoutPanel resultPanel;
-        private System.Windows.Forms.CheckBox sortDurationOpt;
+        private System.Windows.Forms.RadioButton sortNoOfChange;
+        private System.Windows.Forms.RadioButton sortTotalDuration;
+        private System.Windows.Forms.RadioButton sortTimeInPlane;
     }
 }
