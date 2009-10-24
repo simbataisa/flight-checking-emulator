@@ -108,7 +108,11 @@ namespace FlightCheckingEmulator
             }
 
             FlightConstraint con = GetCheckFlightConstraint();
-            List<List<String>> results = flightPlanner.CheckFlights(con);
+            int sortOption = 3;
+            if (sortNoOfChange.Checked) sortOption = 1;
+            if (sortTotalDuration.Checked) sortOption = 0;
+            if (sortTimeInPlane.Checked) sortOption = 2;
+            List<List<String>> results = flightPlanner.CheckFlights(con, sortOption);
             
             resultPanel.Controls.Clear();
 
@@ -335,6 +339,7 @@ namespace FlightCheckingEmulator
                 if (visitPlanPlacesListBox.Items[i].Equals(origin))
                 {
                     visitPlanPlacesListBox.Items.RemoveAt(i);
+                    break;
                 }
             }
         }
@@ -383,7 +388,12 @@ namespace FlightCheckingEmulator
 
             con.Places = visitPlaces.ToArray();
 
-            List<List<String>> results = flightPlanner.CheckFlights(con);
+            int sortOption = 3;
+            if (sortNoOfChange.Checked) sortOption = 1;
+            if (sortTotalDuration.Checked) sortOption = 0;
+            if (sortTimeInPlane.Checked) sortOption = 2;
+            
+            List<List<String>> results = flightPlanner.CheckFlights(con, sortOption);
 
             resultPanel.Controls.Clear();
             if (results.Count == 0)
@@ -424,6 +434,11 @@ namespace FlightCheckingEmulator
                 seqLabel.Text = "Visit Sequence " + count + ": " + text;
                 resultPanel.Controls.Add(seqLabel);
             }
+        }
+
+        private void sortTotalDuration_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

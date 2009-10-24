@@ -40,7 +40,7 @@ namespace FlightCheckingEmulator
                 //Building a graph based on the flights read
 				routes = BuildRoutes(flights);	
 
-				this.LoadScheme();
+				//this.LoadScheme();
 				
 			}
 			catch(FileNotFoundException e) {
@@ -65,7 +65,7 @@ namespace FlightCheckingEmulator
 			reader.Close();
 			
 			/* Evaluate the procedures */
-			schemeObj.Eval(content);
+            schemeObj.Eval(content);
 		}
 		
 		/* Convert a path list into scheme representation */
@@ -102,7 +102,7 @@ namespace FlightCheckingEmulator
 			/* Convert result string to integer	and return */
 			return Int32.Parse(result);
 		}
-		
+	
 		/* Compare two routes, return difference in cost */
 		private int CompareByCost(List<String> a, List<String> b)
 		{
@@ -156,6 +156,190 @@ namespace FlightCheckingEmulator
 			
 			return diff;
 		}
+
+        /* Compare two routes by the duration in plane, return difference in cost */
+        private int CompareByInPlaneDuration(List<String> a, List<String> b)
+        {
+            int diff;
+
+            int tA = 0, tB = 0;
+            Flight fA, fB;
+            if (a != null)
+            {
+                for (int i = 0; i < a.Count; i++)
+                {
+                    /* a[i] will return a string and the string is passed to the hash table flights to get the flight object */
+                    fA = flights[a[i]];
+
+                    /* Calculate the total time needed for a flight and add to total time */
+                    tA += fA.ArrivalTime - fA.DepartureTime;
+                    /* if the flight arrival is on next day, add 24 hours */
+                    if (fA.ArrivalOnNextDay)
+                        tA += 24 * 60;
+                }
+            }
+
+            if (b != null)
+            {
+                for (int i = 0; i < b.Count; i++)
+                {
+                    /* b[i] will return a string and the string is passed to the hash table flights to get the flight object */
+                    fB = flights[b[i]];
+
+                    /* Calculate the total time needed for a flight and add to total time */
+                    tB += fB.ArrivalTime - fB.DepartureTime;
+                    /* if the flight arrival is on next day, add 24 hours */
+                    if (fB.ArrivalOnNextDay)
+                        tB += 24 * 60;
+                }
+            }
+
+            diff = tA - tB;
+
+            return diff;
+        }
+
+
+        /* Compare two routes by the total duration of the trip, return difference in cost */
+        private int CompareByTotalDuration(List<String> a, List<String> b)
+        {
+            int diff;
+
+            int tA = 0, tB = 0, dA = 0, dB = 0;
+            Flight fA, fB;
+
+            int weekA = 0, depDayA = 0, arrDayA = 0;
+            Time depA = new Time(0, 0);
+            Time arrA = new Time(0, 0);
+            if (a != null)
+            {
+                fA = flights[a[0]];
+                for (int i = 0; i < 7; i++)
+                {
+                    if (fA.Days.Get(i))
+                    {
+                        dA = i;
+                        depA = fA.DepartureTime;
+                        depDayA = i;
+                        if (fA.ArrivalOnNextDay)
+                        {
+                            dA++;
+                            dA %= 7;
+                        }
+                        arrA = fA.ArrivalTime;
+                        break;
+                    }
+                }
+                for (int i = 0; i < a.Count; i++)
+                {
+                    /* a[i] will return a string and the string is passed to the hash table flights to get the flight object */
+                    fA = flights[a[i]];
+
+                    bool found = false;
+                    for (int day = dA; day < 7; day++) if (fA.Days.Get(day))
+                        if (day > dA || (day == dA && fA.DepartureTime >= arrA))
+                        {
+                            dA = day;
+                            arrA = fA.ArrivalTime;
+                            arrDayA = day;
+                            if (fA.ArrivalOnNextDay)
+                            {
+                                arrDayA++; arrDayA %= 7;
+                                dA++; dA %= 7;
+                            }
+                            found = true;
+                            break;
+                        }
+
+                    if (!found)
+                    {
+                        for (int day = 0; day < 7; day++) if (fA.Days.Get(day))
+                        {
+                            dA = day;
+                            weekA++;
+                            arrDayA = day;
+                            arrA = fA.ArrivalTime;
+                            if (fA.ArrivalOnNextDay)
+                            {
+                                arrDayA++; arrDayA %= 7;
+                                dA++; dA %= 7;
+                            }
+                            break;
+                        }
+                    }
+                }
+
+                tA = weekA * 7 * 24 * 60 + (arrDayA - depDayA) * 24 * 60 + (arrA - depA);
+            }
+
+            int weekB = 0, depDayB = 0, arrDayB = 0;
+            Time depB = new Time(0, 0);
+            Time arrB = new Time(0, 0);
+            if (b != null)
+            {
+                fB = flights[b[0]];
+                for (int i = 0; i < 7; i++)
+                {
+                    if (fB.Days.Get(i))
+                    {
+                        dB = i;
+                        depB = fB.DepartureTime;
+                        depDayB = i;
+                        if (fB.ArrivalOnNextDay)
+                        {
+                            dB++;
+                            dB %= 7;
+                        }
+                        arrB = fB.ArrivalTime;
+                        break;
+                    }
+                }
+                for (int i = 0; i < b.Count; i++)
+                {
+                    /* a[i] will return a string and the string is passed to the hash table flights to get the flight object */
+                    fB = flights[b[i]];
+
+                    bool found = false;
+                    for (int day = dB; day < 7; day++) if (fB.Days.Get(day))
+                            if (day > dB || (day == dB && fB.DepartureTime >= arrB))
+                            {
+                                dB = day;
+                                arrB = fB.ArrivalTime;
+                                arrDayB = day;
+                                if (fB.ArrivalOnNextDay)
+                                {
+                                    arrDayB++; arrDayB %= 7;
+                                    dB++; dB %= 7;
+                                }
+                                found = true;
+                                break;
+                            }
+
+                    if (!found)
+                    {
+                        for (int day = 0; day < 7; day++) if (fB.Days.Get(day))
+                            {
+                                dB = day;
+                                weekB++;
+                                arrDayB = day;
+                                arrB = fB.ArrivalTime;
+                                if (fB.ArrivalOnNextDay)
+                                {
+                                    arrDayB++; arrDayB %= 7;
+                                    dB++; dB %= 7;
+                                }
+                                break;
+                            }
+                    }
+                }
+
+                tB = weekB * 7 * 24 * 60 + (arrDayB - depDayB) * 24 * 60 + (arrB - depB);
+            }
+
+            diff = tA - tB;
+
+            return diff;
+        }
 		
 		/* Returns day of week index in BitArray representation */
 		public int DayIndex(string s)
@@ -344,7 +528,7 @@ namespace FlightCheckingEmulator
 		/* CheckFlights returns all routes that fit the flight constraint
 		 * Depth-first search with loop detection is used
 		 */
-		public List<List<String>> CheckFlights(FlightConstraint con)
+		public List<List<String>> CheckFlights(FlightConstraint con, int sortOption)
 		{
 			List<List<String>> results = new List<List<String>>();
 			
@@ -469,7 +653,19 @@ namespace FlightCheckingEmulator
 				}
 			}
 			/* Sort the results using Scheme */
-			results.Sort(CompareByCostScheme);
+
+            switch (sortOption)
+            {
+                case 0:
+                    results.Sort(CompareByTotalDuration);
+                    break;
+                case 1:
+                    results.Sort(CompareByCost);
+                    break;
+                case 2:
+                    results.Sort(CompareByInPlaneDuration);
+                    break;
+            }
 			
 			return results;
 		}

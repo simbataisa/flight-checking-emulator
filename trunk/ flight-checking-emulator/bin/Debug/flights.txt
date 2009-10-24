@@ -12,9 +12,10 @@ Greece 		London 		9:00 	11:40	BA613	Mo, Tu, We, Th, Fr, Sa
 Greece 		London 		16:10	18:55	SR806	Mo, Tu, We, Th, Fr, Su
 London		Paris  		8:30 	10:30 	BA510	Alldays
 London 		Paris  		13:10	15:10	AZ459 	Alldays
-Paris 		London		9:10 	10:20 	BA511 	Alldays
+Paris 		London		9:10 	10:21 	BA511 	Alldays
 Paris 		London		12:20 	13:30	AZ460 	Alldays 
+Paris 		Greece		08:20 	20:30	AZ461 	Alldays 
 Paris  		Rome  		11:30  	12:40 	JP322  	Tu, We, Th 
 Rome  		Paris  		13:30  	14:40  	JP323  	Tu, We, Th
-Rome  		Greece  	14:40  	16:30  	FS619  	Mo, We, Th, Fr 
+Rome  		Greece  	14:40  	16:31  	FS619  	Mo, We, Th, Fr 
 Greece  	Rome  		11:00  	13:10  	FS620  	Mo, We, Th, Fr 
