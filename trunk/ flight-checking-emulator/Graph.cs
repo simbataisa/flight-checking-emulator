@@ -8,52 +8,52 @@ namespace FlightCheckingEmulator
 	/// <summary>
 	/// Description of Graph.
 	/// </summary>
-	public class Graph<T,F> where T : IComparable<T>, ICloneable where F : ICloneable
+	public class CityGraph<T,F> where T : IComparable<T>, ICloneable where F : ICloneable
 	{
-		private List<Node<T,F>> nodeSet;
+		private List<City<T,F>> citySet;
 
-		public Graph() : this(null) {}
-		public Graph(List<Node<T,F>> nodeSet)
+		public CityGraph() : this(null) {}
+		public CityGraph(List<City<T,F>> nodeSet)
 		{
 			if (nodeSet == null)
-				this.nodeSet = new List<Node<T,F>>();
+				this.citySet = new List<City<T,F>>();
 			else
-				this.nodeSet = nodeSet;
+				this.citySet = nodeSet;
 		}
 
-		public void AddNode(Node<T,F> node)
+		public void AddCity(City<T,F> node)
 		{
-			AddNode(node.Value);
+			AddCity(node.Value);
 		}
 
-		public void AddNode(T value)
+		public void AddCity(T value)
 		{	
 			if( !Contains(value) )
-				nodeSet.Add(new Node<T,F>(value));
+				citySet.Add(new City<T,F>(value));
 		}
 		
-		public void AddEdge(T from, F edge) {
-			AddEdge(GetNode(from), edge);
+		public void AddFlight(T from, F edge) {
+			AddFlight(GetCity(from), edge);
 		}
 		
-		public void AddEdge(Node<T,F> from, F edge)
+		public void AddFlight(City<T,F> from, F edge)
 		{
 			from.Neighbours.Add(edge);
 		}
 
 		public bool Contains(T value)
 		{
-			return (GetNode(value) != null);
+			return (GetCity(value) != null);
 		}
 
 		public bool Remove(T value)
 		{
-			return nodeSet.Remove(GetNode(value));
+			return citySet.Remove(GetCity(value));
 		}
 
-		public Node<T,F> GetNode(T value)
+		public City<T,F> GetCity(T value)
 		{
-			foreach(Node<T,F> node in nodeSet) {
+			foreach(City<T,F> node in citySet) {
 				if(node.Value.CompareTo(value) == 0)
 					return node;
 			}
@@ -61,12 +61,12 @@ namespace FlightCheckingEmulator
 			return null;
 		}
 		
-		public List<Node<T,F>> Nodes
+		public List<City<T,F>> Nodes
 		{
-			get { return nodeSet; }
+			get { return citySet; }
 		}
 
 		public int Count
-		{ get { return nodeSet.Count; } }
+		{ get { return citySet.Count; } }
 	}
 }

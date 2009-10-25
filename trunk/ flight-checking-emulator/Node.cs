@@ -8,14 +8,14 @@ namespace FlightCheckingEmulator
 	/// <summary>
 	/// Description of Node.
 	/// </summary>
-	public class Node<T,F> : ICloneable where T : ICloneable where F : ICloneable
+	public class City<T,F> : ICloneable where T : ICloneable where F : ICloneable
 	{
         private T data;
         private List<F> neighbours = null;
 
-        public Node() {}
-        public Node(T data) : this(data, new List<F>()) {}
-        public Node(T data, List<F> neighbours){
+        public City() {}
+        public City(T data) : this(data, new List<F>()) {}
+        public City(T data, List<F> neighbours){
             this.data = data;
             this.neighbours = neighbours;
         }
@@ -32,7 +32,7 @@ namespace FlightCheckingEmulator
 	
 		object ICloneable.Clone()
 		{
-			Node<T,F> newNode = new Node<T,F>();
+			City<T,F> newNode = new City<T,F>();
 			newNode.data = (T)data.Clone();
 			foreach(F item in neighbours)
 			{
