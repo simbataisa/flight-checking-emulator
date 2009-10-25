@@ -49,22 +49,18 @@ namespace FlightCheckingEmulator
             MessageBox.Show("scheme error: " + s);
         }
 		
-		/* Load scheme COM */
 		private void LoadScheme()
 		{
 			schemeObj = new MzObjClass();
 			schemeObj.SchemeError += new _IMzObjEvents_SchemeErrorEventHandler(error);
 			
-			/* Load procedures from CompareByCost.ss */
 			StreamReader reader = new StreamReader("CompareByCost.ss");
 			string content = reader.ReadToEnd();
 			reader.Close();
 			
-			/* Evaluate the procedures */
             schemeObj.Eval(content);
 		}
 		
-		/* Convert a path list into scheme representation */
 		private string ToSchemeList(List<String> input)
 		{
 			string s = "(list ";
@@ -88,14 +84,11 @@ namespace FlightCheckingEmulator
 			if( schemeObj == null )
 				throw new NullReferenceException("schemeObj is null.");
 			
-			/* Format input string to CompareByCost in scheme */
 			string call = "(CompareByCost " + ToSchemeList(a) + ToSchemeList(b) + ")";
 			
-			/* Call CompareByCost and format the result string */
 			string result = schemeObj.Eval(call);
 			result = result.Trim(new Char[] {'"'});
 			
-			/* Convert result string to integer	and return */
 			return Int32.Parse(result);
 		}
 	
